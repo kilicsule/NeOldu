@@ -1,0 +1,80 @@
+﻿@model Neoldu.Data.Domain.Entities.People
+<div class="row">
+    <div class="col-md-12">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            @{var Fotograf = "";
+                                if (Model.Image != null)
+                                    Fotograf = "http://localhost:50000/Images/" + Model.Image;
+                                else
+                                    Fotograf = "";
+                            }
+                            <div style="width:100%; text-align:center">
+                                <img src="@Fotograf" class="img-thumbnail" alt="...">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    Ad:
+                                    <span class="float-right">@Html.DisplayFor(m => m.FirstName)</span>
+                                </li>
+                                <li class="list-group-item">
+                                    Soyadı:
+                                    <span class="float-right">@Html.DisplayFor(m => m.LastName)</span>
+                                </li>
+                                <li class="list-group-item">
+                                    Başlık:
+                                    <span class="float-right">@Html.DisplayFor(m => m.Title)</span>
+                                </li>
+                                <li class="list-group-item">
+                                    Haber:
+                                    <span class="float-right">@Html.DisplayFor(m => m.News)</span>
+                                </li>
+                                <li class="list-group-item">
+                                    Açıklama:
+                                    <span class="float-right">@Html.DisplayFor(m => m.Description)</span>
+                                </li>
+                                <li class="list-group-item">
+                                    Detay:
+                                    <span class="float-right">@Html.DisplayFor(m => m.Detail)</span>
+                                </li>
+                                <li class="list-group-item">
+                                    Ölüm Yeri:
+                                    <span class="float-right">@Html.DisplayFor(m => m.PlaceDeath)</span>
+                                </li>
+                                <li class="list-group-item">
+                                    Neden Öldürüldü:
+                                    <span class="float-right">@Html.DisplayFor(m => m.WhyKilled)</span>
+                                </li>
+                                <li class="list-group-item">
+                                    Kim tarafından öldürüldü:
+                                    <span class="float-right">@Html.DisplayFor(m => m.ByWhom)</span>
+                                </li>
+                                <li class="list-group-item">
+                                    Korunma talebi:
+                                    <span class="float-right">@Html.DisplayFor(m => m.IsProtection)</span>
+                                </li>
+                                <li class="list-group-item">
+                                    Öldürülme şekli:
+                                    <span class="float-right">@Html.DisplayFor(m => m.WayKilled)</span>
+                                </li>
+                                <li class="list-group-item">
+                                    Failin durumu:
+                                    <span class="float-right">@Html.DisplayFor(m => m.Subject)</span>
+                                </li>
+                                <li class="list-group-item">
+                                    Haberin Kaynağı :
+                                    <span class="float-right">@Html.DisplayFor(m => m.SourceLink)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

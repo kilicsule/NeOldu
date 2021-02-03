@@ -1,0 +1,27 @@
+﻿@model NeOldu.Client.Models.DeathDateViewModel.DeathDateCEViewModel
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="tab-content">
+                    <div class="tab-pane active show" id="tab-price">
+                        <div class="form-row">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="col-md-12">
+                                @Html.Label("Tarih")
+                                @Html.TextBoxFor(m => m.Year, new { placeholder = "Tarih", @class = "form-control mb-2 mr-sm-2" })
+                                <span asp-validation-for="Year" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="float-right mt-2">
+            <button class="btn btn-primary">Kaydet</button>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

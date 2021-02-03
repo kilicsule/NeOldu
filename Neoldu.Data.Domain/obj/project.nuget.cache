@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "oVHxRXCSWp6TMUj2rur3x0ULkClOyK3XMlSn673aJkLM3FsNksZ52PPSrZb3onn/61I+xtjsG+dvy2+VcncJAg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\EysanGuc\\source\\repos\\NeOldu\\Neoldu.Data.Domain\\Neoldu.Data.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\EysanGuc\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\EysanGuc\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

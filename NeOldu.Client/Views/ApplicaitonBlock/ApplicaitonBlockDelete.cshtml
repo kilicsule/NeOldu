@@ -1,0 +1,68 @@
+﻿@model Neoldu.Data.Domain.Entities.ApplicaitonBlock
+@using (Html.BeginForm("DeleteConfirmed", "ApplicaitonBlock", FormMethod.Post))
+{
+
+    @Html.HiddenFor(p => p.Id)
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="col-12">
+                                @{var Fotograf = "";
+                                    if (Model.People.Image != null)
+                                        Fotograf = "http://localhost:50000/Images/" + Model.People.Image;
+                                    else
+                                        Fotograf = "/img/avatar.png";
+                                }
+                                <div style="width:100%; text-align:center">
+                                    <img src="@Fotograf" class="img-thumbnail" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        Ad:
+                                        <span class="float-right">@Html.DisplayFor(m => m.People.FirstName)</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Soyadı:
+                                        <span class="float-right">@Html.DisplayFor(m => m.People.LastName)</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Haber:
+                                        <span class="float-right">@Html.DisplayFor(m => m.People.News)</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Haber Kaynağı:
+                                        <span class="float-right">@Html.DisplayFor(m => m.People.SourceLink)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-12">
+                                <ul class="list-group">
+                                    @foreach (var item in Model.ApplicationBlock_ApplicationUsers)
+                                    {
+                                        <li class="list-group-item">
+                                            <b>Ad Soyad:</b>
+                                            <span class="float-right text-muted">@Html.DisplayFor(p => item.ApplicationUser.FirstName) @Html.DisplayFor(p => item.ApplicationUser.LastName) </span>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="float-right mt-2">
+        <button class="btn btn-outline-primary" type="submit"> Silin </button>
+    </div>
+    <div class="float-right mt-2">
+        <a class="btn btn-outline-success" href="@Url.Action("Index", "ApplicaitonBlock")"> Geri </a>
+    </div>
+}

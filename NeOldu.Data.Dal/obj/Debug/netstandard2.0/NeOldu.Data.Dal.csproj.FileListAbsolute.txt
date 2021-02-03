@@ -1,0 +1,12 @@
+C:\Users\EysanGuc\source\repos\NeOldu\NeOldu.Data.Dal\bin\Debug\netstandard2.0\NeOldu.Data.Dal.deps.json
+C:\Users\EysanGuc\source\repos\NeOldu\NeOldu.Data.Dal\bin\Debug\netstandard2.0\NeOldu.Data.Dal.dll
+C:\Users\EysanGuc\source\repos\NeOldu\NeOldu.Data.Dal\bin\Debug\netstandard2.0\NeOldu.Data.Dal.pdb
+C:\Users\EysanGuc\source\repos\NeOldu\NeOldu.Data.Dal\bin\Debug\netstandard2.0\Neoldu.Data.Domain.dll
+C:\Users\EysanGuc\source\repos\NeOldu\NeOldu.Data.Dal\bin\Debug\netstandard2.0\Neoldu.Data.Domain.pdb
+C:\Users\EysanGuc\source\repos\NeOldu\NeOldu.Data.Dal\obj\Debug\netstandard2.0\NeOldu.Data.Dal.csprojAssemblyReference.cache
+C:\Users\EysanGuc\source\repos\NeOldu\NeOldu.Data.Dal\obj\Debug\netstandard2.0\NeOldu.Data.Dal.AssemblyInfoInputs.cache
+C:\Users\EysanGuc\source\repos\NeOldu\NeOldu.Data.Dal\obj\Debug\netstandard2.0\NeOldu.Data.Dal.AssemblyInfo.cs
+C:\Users\EysanGuc\source\repos\NeOldu\NeOldu.Data.Dal\obj\Debug\netstandard2.0\NeOldu.Data.Dal.csproj.CoreCompileInputs.cache
+C:\Users\EysanGuc\source\repos\NeOldu\NeOldu.Data.Dal\obj\Debug\netstandard2.0\NeOldu.Data.Dal.csproj.CopyComplete
+C:\Users\EysanGuc\source\repos\NeOldu\NeOldu.Data.Dal\obj\Debug\netstandard2.0\NeOldu.Data.Dal.dll
+C:\Users\EysanGuc\source\repos\NeOldu\NeOldu.Data.Dal\obj\Debug\netstandard2.0\NeOldu.Data.Dal.pdb

@@ -1,0 +1,14 @@
+﻿@model NeOldu.Client.Models.GirisViewModel.GirisViewModel
+
+@{
+    ViewBag.Title = "Üyelik";
+}
+
+@using (Html.BeginForm("OturumAc", "Oturum", FormMethod.Get))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @await Html.PartialAsync("GirisYapCEViewModel")
+    </div>
+}

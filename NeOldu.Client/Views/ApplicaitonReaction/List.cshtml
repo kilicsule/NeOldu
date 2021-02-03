@@ -1,0 +1,46 @@
+﻿@model NeOldu.Client.Models.ApplicaitonReactionViewModel.ApplicaitonReactionHomeViewModel
+@if (Model.PagedList.Count() > 0)
+{
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Adı</th>
+                <th>Soyadı</th>
+                <th>Haber Kaynağı</th>
+                <th>Haber</th>
+                <th>Ölüm Tarihi</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model.PagedList)
+        {
+            <tr>
+                <td>
+                    <div class="input-group-prepend">
+                        <a class="btn btn-outline-secondary btn-sm" title="Detay"
+                           href="@Url.Action("Details", "ApplicaitonReaction", new { id = item.Id })">
+                            <i class="fa fa-eye"></i>
+                        </a>
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="@Url.Action("ApplicaitonReactionDelete", "ApplicaitonReaction", new { id = item.Id })">Sil</a>
+                        </div>
+                    </div>
+                </td>
+                <td>@Html.DisplayFor(modelItem => item.People.SourceLink)</td>
+                <td>@Html.DisplayFor(modelItem => item.People.News)</td>
+                <td>@Html.DisplayFor(modelItem => item.People.FirstName)</td>
+                <td>@Html.DisplayFor(modelItem => item.People.LastName)</td>
+                <td>@Html.DisplayFor(modelItem => item.People.DeathDate.Year)</td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <div class="card-body">
+        @await Html.PartialAsync("ErrorList", "Kullanıcı Hiç Habere Tepki Vermedi")
+    </div>
+}

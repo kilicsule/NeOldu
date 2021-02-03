@@ -1,0 +1,61 @@
+﻿@model NeOldu.Client.Models.ApplicationUserViewModel.ApplicationUserCEViewModel
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="tab-content">
+                    <div class="tab-pane active show" id="tab-price">
+                        <div class="form-row">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="col-md-6">
+                                @Html.Label("Ad")
+                                @Html.TextBoxFor(m => m.FirstName, new { placeholder = "Ad", @class = "form-control mb-2 mr-sm-2" })
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                @Html.Label("Soyadı")
+                                @Html.TextBoxFor(m => m.LastName, new { placeholder = "Soyadı", @class = "form-control mb-2 mr-sm-2" })
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                @Html.Label("Talep Türü")
+                                <select asp-for="ApplicationTypeId" asp-items="@ViewBag.ApplicationType" class="form-control">
+                                </select>
+                                <span asp-validation-for="ApplicationTypeId" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                @Html.Label("E-posta")
+                                @Html.TextBoxFor(m => m.Email, new { placeholder = "E-posta", @class = "form-control mb-2 mr-sm-2" })
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                @Html.Label("Kullanıcı Adı")
+                                @Html.TextBoxFor(m => m.UserName, new { placeholder = "Kullanıcı Adı", @class = "form-control mb-2 mr-sm-2" })
+                                <span asp-validation-for="UserName" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                @Html.Label("Şifre")
+                                @Html.TextBoxFor(m => m.Password, new { placeholder = "Şifre", @class = "form-control mb-2 mr-sm-2" })
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-12">
+                                @Html.Label("Resim")
+                                @Html.HiddenFor(p=>p.Image)
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="ImageFile" name="ImageFile">
+                                    <label class="custom-file-label" for="validatedCustomFile">Resim</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="float-right mt-2">
+            <button class="btn btn-primary">Kaydet</button>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

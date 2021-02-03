@@ -1,0 +1,95 @@
+﻿@model NeOldu.Client.Models.PeopleViewModel.PeopleCEViewModel
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="tab-content">
+                    <div class="tab-pane active show" id="tab-price">
+                        <div class="form-row">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="col-md-6">
+                                @Html.Label("Ad")
+                                @Html.TextBoxFor(m => m.FirstName, new { placeholder = "Ad", @class = "form-control mb-2 mr-sm-2" })
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                @Html.Label("Soyadı")
+                                @Html.TextBoxFor(m => m.LastName, new { placeholder = "Soyadı", @class = "form-control mb-2 mr-sm-2" })
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                @Html.Label("Talep Türü")
+                                <select asp-for="DeathDateId" asp-items="@ViewBag.DeathDate" class="form-control">
+                                </select>
+                                <span asp-validation-for="DeathDateId" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                @Html.Label("Başlık")
+                                @Html.TextBoxFor(m => m.Title, new { placeholder = "Başlık", @class = "form-control mb-2 mr-sm-2" })
+                                <span asp-validation-for="Title" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                @Html.Label("Haber")
+                                @Html.TextBoxFor(m => m.News, new { placeholder = "Haber", @class = "form-control mb-2 mr-sm-2" })
+                                <span asp-validation-for="News" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                @Html.Label("Açıklama")
+                                @Html.TextBoxFor(m => m.Description, new { placeholder = "Açıklama", @class = "form-control mb-2 mr-sm-2" })
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                @Html.Label("Ölüm Yeri")
+                                @Html.TextBoxFor(m => m.PlaceDeath, new { placeholder = "Ölüm Yeri", @class = "form-control mb-2 mr-sm-2" })
+                                <span asp-validation-for="PlaceDeath" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                @Html.Label("Fail Durumu")
+                                @Html.TextBoxFor(m => m.Subject, new { placeholder = "Fail Durumu", @class = "form-control mb-2 mr-sm-2" })
+                                <span asp-validation-for="Subject" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                @Html.Label("Öldüren Kişi")
+                                @Html.TextBoxFor(m => m.ByWhom, new { placeholder = "Öldüren Kişi", @class = "form-control mb-2 mr-sm-2" })
+                                <span asp-validation-for="ByWhom" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                @Html.Label("Koruma Talebi")
+                                @Html.TextBoxFor(m => m.IsProtection, new { placeholder = "Koruma Talebi", @class = "form-control mb-2 mr-sm-2" })
+                                <span asp-validation-for="IsProtection" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                @Html.Label("Öldürülme Şekli")
+                                @Html.TextBoxFor(m => m.WayKilled, new { placeholder = "Öldürülme Şekli", @class = "form-control mb-2 mr-sm-2" })
+                                <span asp-validation-for="WayKilled" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                @Html.Label("Haber Kaynağı")
+                                @Html.TextBoxFor(m => m.SourceLink, new { placeholder = "Haber Kaynağı", @class = "form-control mb-2 mr-sm-2" })
+                                <span asp-validation-for="SourceLink" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-12">
+                                @Html.Label("Resim")
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="Image" name="Image" required>
+                                    <label class="custom-file-label" for="validatedCustomFile">Resim</label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                @Html.Label("Detay")
+                                @Html.TextAreaFor(m => m.Detail, new { placeholder = "Detay", @class = "form-control mb-2 mr-sm-2" })
+                                <span asp-validation-for="Detail" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="float-right mt-2">
+            <button class="btn btn-primary">Kaydet</button>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

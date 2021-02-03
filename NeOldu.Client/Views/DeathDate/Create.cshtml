@@ -1,0 +1,15 @@
+﻿@model NeOldu.Client.Models.DeathDateViewModel.DeathDateCEViewModel
+
+@{
+    ViewBag.Title = "İletişim Ekle";
+}
+
+@using (Html.BeginForm("CreateConfirmed", "DeathDate", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @await Html.PartialAsync("_CreateEdit")
+    </div>
+}

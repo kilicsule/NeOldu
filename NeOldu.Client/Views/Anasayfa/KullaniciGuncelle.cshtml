@@ -1,0 +1,87 @@
+﻿@model NeOldu.Client.Models.ApplicationUserViewModel.ApplicationUserCEViewModel
+@{ Layout = ""; }
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Araştırın</title>
+</head>
+
+<body>
+    @await Html.PartialAsync("_Navbar.cshtml")
+    <div>
+        @Html.BeginForm("KullaniciGuncelleConfirmed", "Anasayfa", FormMethod.Post)
+        <div class="slice slice-lg bg-section-secondary">
+            <div class="container pt-5">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-6">
+                        <h3>Üye olmak için aşağıda istenen bilgileri eksiksiz doldurunuz.</h3>
+                        <div>
+                            <div class="row form-group">
+                                <div class="col-md-6">
+                                    <label for="lname">Ad</label>
+                                    @Html.TextBoxFor(p => p.FirstName, new { @class = "form-control" })
+                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="lname">Soyad</label>
+                                    @Html.TextBoxFor(p => p.LastName, new { @class = "form-control" })
+                                    <span asp-validation-for="LastName" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-6">
+                                    <label for="fname">Kullanıcı Adı</label>
+                                    @Html.TextBoxFor(p => p.UserName, new { @class = "form-control" })
+                                    <span asp-validation-for="UserName" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="fname">Parola</label>
+                                    @Html.TextBoxFor(p => p.Password, new { @class = "form-control", @type = "password" })
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label for="email">E-Posta</label>
+                                    @Html.TextBoxFor(p => p.Email, new { @class = "form-control" })
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    @Html.Label("Resim")
+                                    @Html.HiddenFor(p=>p.Image)
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="ImageFile" name="ImageFile">
+                                        <label class="custom-file-label" for="validatedCustomFile">Resim</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Güncelle</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @await Html.PartialAsync("_Footer.cshtml")
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+</body>
+</html>

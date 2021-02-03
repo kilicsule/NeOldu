@@ -1,0 +1,15 @@
+﻿@model NeOldu.Client.Models.DeathDateViewModel.DeathDateCEViewModel
+@{
+    ViewBag.Title = "Haber Güncelle";
+}
+
+@using (Html.BeginForm("EditConfirmed", "DeathDate", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(p => p.Id)
+        @await Html.PartialAsync("_CreateEdit")
+    </div>
+}

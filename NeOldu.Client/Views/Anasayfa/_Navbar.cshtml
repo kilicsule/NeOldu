@@ -1,0 +1,30 @@
+﻿<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">NeOldu</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="@Url.Action("Index","Anasayfa")">Ana Sayfa <span class="sr-only">(current)</span></a>
+                </li>
+                @*<li class="nav-item">
+                        <a class="nav-link" href="#">Neler Oluyor ? </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">İletişim</a>
+                    </li>*@
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("KullaniciGuncelle","Anasayfa")">Profile Güncelle</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav flex-grow-0">
+                <li class="nav-item">
+                    <a class="btn btn-danger text-white" type="button" asp-area="" asp-controller="Oturum" asp-action="Cikis">Cikis</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

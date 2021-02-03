@@ -1,0 +1,9 @@
+C:\Users\EysanGuc\source\repos\NeOldu\Neoldu.Data.Domain\bin\Debug\netstandard2.0\Neoldu.Data.Domain.deps.json
+C:\Users\EysanGuc\source\repos\NeOldu\Neoldu.Data.Domain\bin\Debug\netstandard2.0\Neoldu.Data.Domain.dll
+C:\Users\EysanGuc\source\repos\NeOldu\Neoldu.Data.Domain\bin\Debug\netstandard2.0\Neoldu.Data.Domain.pdb
+C:\Users\EysanGuc\source\repos\NeOldu\Neoldu.Data.Domain\obj\Debug\netstandard2.0\Neoldu.Data.Domain.csprojAssemblyReference.cache
+C:\Users\EysanGuc\source\repos\NeOldu\Neoldu.Data.Domain\obj\Debug\netstandard2.0\Neoldu.Data.Domain.AssemblyInfoInputs.cache
+C:\Users\EysanGuc\source\repos\NeOldu\Neoldu.Data.Domain\obj\Debug\netstandard2.0\Neoldu.Data.Domain.AssemblyInfo.cs
+C:\Users\EysanGuc\source\repos\NeOldu\Neoldu.Data.Domain\obj\Debug\netstandard2.0\Neoldu.Data.Domain.csproj.CoreCompileInputs.cache
+C:\Users\EysanGuc\source\repos\NeOldu\Neoldu.Data.Domain\obj\Debug\netstandard2.0\Neoldu.Data.Domain.dll
+C:\Users\EysanGuc\source\repos\NeOldu\Neoldu.Data.Domain\obj\Debug\netstandard2.0\Neoldu.Data.Domain.pdb

@@ -1,0 +1,31 @@
+﻿@model Neoldu.Data.Domain.Entities.DeathDate
+<div class="row">
+    <div class="col-md-12">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            Tarih:
+                            <span class="float-right">@Html.DisplayFor(m => m.Year)</span>
+                        </div>
+                        <div class="col-md-8">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    Ölen İnsanlar:
+                                </li>
+                                @foreach (var item in Model.Peoples)
+                                {
+                                    <li class="list-group-item">
+                                        <b>Ad Soyad:</b> 
+                                        <span class="float-right text-muted">@Html.DisplayFor(p => item.FirstName) @Html.DisplayFor(p=>item.LastName) </span>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

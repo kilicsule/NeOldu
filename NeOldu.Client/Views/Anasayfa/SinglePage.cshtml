@@ -1,0 +1,129 @@
+﻿@model NeOldu.Client.Models.HomePageViewModel.HomePageViewModel
+@{ Layout = ""; }
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Araştırın</title>
+</head>
+
+<body>
+    @await Html.PartialAsync("_Navbar.cshtml")
+    <div class="container mt-5">
+        <div class="row mt-5">
+            <div class="col-lg-12 justify-content-end">
+                <div class="d-flex flex-row-reverse bd-highlight">
+                    <a href="@Url.Action("HaberTepkiVer", "Anasayfa", new { PeopleNewsId = Model.PeopleNewsId })" class="btn btn-outline-primary p-2 bd-highlight">Tepki Ver</a>
+                    <a href="@Url.Action("Bloklama","Anasayfa",new{PeopleNewsId = Model.PeopleNewsId })" class="btn btn-outline-success p-2 bd-highlight mr-3">Blokla</a>
+                </div>
+            </div>
+            @foreach (var item in Model.PeopleList)
+            {
+<div class="col-lg-4" style="border-right:2px solid gray ;">
+    <div class="card mb-3">
+        <div class="card-body text-center"
+             style="background-image: url('http://localhost:50000/Images/@item.Image');">
+        </div>
+    </div>
+    <div class="w-100 p-1">
+        <h5> Ad Soyad: @item.FirstName @item.LastName</h5>
+        <h5> Ölüm Yılı: @item.DeathDate.Year</h5>
+        <h5> İl/Ülke : @item.PlaceDeath / Türkiye</h5>
+        <h5> Neden Öldürüldü: @item.WhyKilled</h5>
+        <h5> Kim tarafından öldürüldü: @item.ByWhom</h5>
+        <h5> Korunma talebi: @item.IsProtection</h5>
+        <h5> Öldürülme şekli: @item.WayKilled</h5>
+        <h5> Failin durumu: @item.Subject.</h5>
+        <h5> <a href="@item.SourceLink">Haberin Kaynağı...</a></h5>
+    </div>
+</div>
+                <div class="col-lg-8">
+                    <div class="col-lg-12">
+                        <div class="card w-100" style="border: none; border-bottom:2px solid gray ;">
+                            <div class="card-body text-dark">
+
+                                <h3 class="card-title ">Kimdir ?</h3>
+                                <p class="card-text">
+                                    @item.Title
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="card w-100" style="border: none;">
+                            <div class="card-body text-dark">
+                                <h3 class="card-title ">@item.News</h3>
+                                <p class="card-text">@item.Detail</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>}
+            <br />
+            <br />
+            <br />
+            <div class="col-lg-12 mt-5">
+                <h3 for="fyorum">Yorumlar</h3>
+                <div class="card w-100" style="border: none; border-bottom:2px solid gray ;">
+                    <div class="row form-group">
+                        @foreach (var item in Model.PeopleCommentList)
+                        {
+            <div class="col-lg-3">
+                <div class="card h-75">
+                    @if (item.ApplicationUser.Image == null)
+                    {
+                <img class="card-img-top" src="/img/avatar.png" alt="Card image cap"> }
+                                else
+                                {
+                                    <img class="card-img-top" src="/Images/@item.ApplicationUser.Image" alt="Card image cap">
+                                                    }
+                    <div class="card-body">
+                        <h5 class="card-title">@item.ApplicationUser.FirstName @item.ApplicationUser.LastName</h5>
+                        <p class="card-text">@item.Comment</p>
+                    </div>
+                </div>
+
+            </div>}
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <div class="col-lg-12">
+                <div class="card w-100" style="border: none; border-bottom:2px solid gray ;">
+                    <div class="row form-group">
+                        <div class="col-lg-12">
+                            @using (Html.BeginForm("KullaniciYorumEkle", "Anasayfa", FormMethod.Get))
+                            {
+
+                @Html.HiddenFor(p => Model.PeopleNewsId)
+                                <label for="fyorum">Yorum Yap</label>
+
+                                                @Html.TextAreaFor(p => p.ApplicationComment, new { @class = "form-control mb-4", placeholder = "Yorum Yap" })
+                                                                <div class="form-group">
+                                                                    <button type="submit" class="btn btn-primary">Yorum Yap</button>
+                                                                </div>}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @await Html.PartialAsync("_Footer.cshtml")
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+</body>
+</html>
